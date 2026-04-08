@@ -1,0 +1,288 @@
+---
+const services = [
+  { label: 'Roof Installation', href: '#services' },
+  { label: 'Roof Replacement', href: '#services' },
+  { label: 'Roof Repair', href: '#services' },
+  { label: 'Roof Maintenance', href: '#services' },
+  { label: 'Roof Inspection', href: '#services' },
+  { label: 'Storm Damage Restoration', href: '#services' },
+  { label: 'Commercial Roofing', href: '#services' },
+  { label: 'Roof Financing', href: '#contact' },
+];
+
+const areas = [
+  'Tampa', 'Brandon', 'Lutz', 'Riverview', 'Westchase',
+  'Sun City', 'Valrico', 'Carrollwood', 'Temple Terrace',
+  'Wesley Chapel', 'Land O Lakes', 'Clearwater', 'St. Petersburg',
+];
+
+const certifications = [
+  'GAF Master Elite™',
+  "GAF President's Club",
+  'GAF Master Select',
+  'GAF Training Excellence',
+  'GAF Installation Excellence',
+  'Owens Corning Preferred',
+  'CertainTeed 5-Star',
+  'A+ BBB Accredited',
+  'Angi Super Service Award',
+];
+---
+
+<footer class="site-footer" aria-label="Site footer">
+  <!-- Main footer body -->
+  <div class="footer-body">
+    <div class="container footer-body__inner">
+      <!-- Col 1: Brand -->
+      <div class="footer-col footer-col--brand">
+        <div class="footer-logo">
+          <svg viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="30">
+            <path d="M20 2L38 16H32V32H8V16H2L20 2Z" fill="#ffffff" fill-opacity="0.15"/>
+            <path d="M20 2L38 16H32V32H8V16H2L20 2Z" stroke="white" stroke-width="1.5"/>
+            <rect x="15" y="20" width="10" height="12" fill="#e8600e"/>
+          </svg>
+          <div class="footer-logo__text">
+            <span class="footer-logo__main">Affordable Roofing</span>
+            <span class="footer-logo__sub">Systems</span>
+          </div>
+        </div>
+        <p class="footer-col__desc">
+          Tampa Bay's most trusted roofing contractor since 1999. GAF Master Elite certified and among the top 3% of roofers nationwide.
+        </p>
+        <div class="footer-licenses">
+          <span class="license-chip">FL Licensed</span>
+          <span class="license-chip">CCC1326722</span>
+          <span class="license-chip">CGC1509172</span>
+        </div>
+        <!-- Social -->
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://www.facebook.com/AffordableRoofingSystems" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/affordableroofingsytemsflorida/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.youtube.com/user/AffordableRoofingFL" target="_blank" rel="noopener" aria-label="YouTube" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45a2.78 2.78 0 00-1.95 1.97A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Services -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">Our Services</h3>
+        <ul class="footer-links">
+          {services.map(s => (
+            <li><a href={s.href} class="footer-link">{s.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 3: Service Areas -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">Service Areas</h3>
+        <ul class="footer-links footer-links--areas">
+          {areas.map(a => (
+            <li><span class="footer-link footer-link--area">{a}</span></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 4: Certifications + Contact -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">Certifications</h3>
+        <ul class="cert-list">
+          {certifications.map(c => (
+            <li class="cert-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              {c}
+            </li>
+          ))}
+        </ul>
+        <div class="footer-contact">
+          <a href="tel:8135428462" class="footer-contact__phone">(813) 542-8462</a>
+          <span class="footer-contact__address">9511 N Trask St Suite A<br/>Tampa, Florida 33624</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer bottom bar -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom__inner">
+      <span>&copy; {new Date().getFullYear()} Affordable Roofing Systems. All rights reserved.</span>
+      <span>Serving Tampa Bay since 1999 &middot; FL License #CCC1326722 &middot; CGC1509172</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.75);
+}
+
+/* Body */
+.footer-body { padding: 80px 0 60px; }
+.footer-body__inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 48px;
+}
+
+/* Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.footer-logo__text { display: flex; flex-direction: column; }
+.footer-logo__main {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: white;
+}
+.footer-logo__sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-col__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-licenses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.license-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.social-link {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  transition: background var(--transition), color var(--transition);
+}
+.social-link:hover { background: var(--orange); color: white; }
+
+/* Columns */
+.footer-col__title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links--areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.footer-link {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--transition), padding-left var(--transition);
+  display: block;
+}
+a.footer-link:hover { color: white; padding-left: 4px; }
+.footer-link--area { font-size: 0.82rem; cursor: default; }
+
+/* Certifications */
+.cert-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.7);
+}
+.cert-item svg { color: var(--orange); flex-shrink: 0; }
+
+/* Contact in footer */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+.footer-contact__phone {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: white;
+  transition: color var(--transition);
+}
+.footer-contact__phone:hover { color: var(--orange); }
+.footer-contact__address {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  background: rgba(0,0,0,0.25);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+}
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+@media (max-width: 1100px) {
+  .footer-body__inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .footer-body__inner { grid-template-columns: 1fr; }
+  .footer-bottom__inner { flex-direction: column; text-align: center; }
+}
+</style>

@@ -1,0 +1,227 @@
+---
+// Header: TopBar + Nav
+---
+
+<header class="site-header" id="site-header">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <span class="top-bar__tagline">WHERE EXPERIENCE AND QUALITY MATTER</span>
+      <div class="top-bar__links">
+        <a href="tel:8135428462" class="top-bar__link top-bar__link--phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.4 21 3 12.6 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          (813) 542-8462
+        </a>
+        <a href="#contact" class="top-bar__link top-bar__link--cta">Get a Free Estimate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" aria-label="Affordable Roofing Systems Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="34">
+            <path d="M20 2L38 16H32V32H8V16H2L20 2Z" fill="#1a3d6e" stroke="#1a3d6e" stroke-width="1"/>
+            <path d="M20 2L38 16H32V32H8V16H2L20 2Z" fill="url(#rg)"/>
+            <rect x="15" y="20" width="10" height="12" fill="#e8600e"/>
+            <defs>
+              <linearGradient id="rg" x1="2" y1="2" x2="38" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1a3d6e"/>
+                <stop offset="1" stop-color="#122c52"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-text__main">Affordable Roofing</span>
+          <span class="logo-text__sub">Systems</span>
+        </div>
+      </a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#process" class="nav__link">Our Process</a></li>
+        <li><a href="#about" class="nav__link">About Us</a></li>
+        <li><a href="#testimonials" class="nav__link">Reviews</a></li>
+        <li><a href="#faq" class="nav__link">FAQ</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="tel:8135428462" class="nav__phone">(813) 542-8462</a>
+        <a href="#contact" class="btn btn-primary nav__cta">Free Estimate</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<style>
+/* ==== TOP BAR ==== */
+.top-bar {
+  background: var(--navy);
+  color: var(--text-inverse);
+  font-size: 0.8rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.top-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+.top-bar__tagline {
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  opacity: 0.85;
+}
+.top-bar__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.top-bar__link {
+  color: var(--text-inverse);
+  opacity: 0.85;
+  transition: opacity var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.top-bar__link:hover { opacity: 1; }
+.top-bar__link--cta {
+  background: var(--orange);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 4px;
+  font-weight: 700;
+  opacity: 1;
+  transition: background var(--transition), transform var(--transition);
+}
+.top-bar__link--cta:hover { background: var(--orange-h); transform: translateY(-1px); }
+
+/* ==== NAV ==== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  animation: fadeInDown 0.5s ease both;
+}
+.nav { background: white; }
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Logo */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.logo-mark { flex-shrink: 0; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-text__main {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+.logo-text__sub {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Links */
+.nav__links {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+}
+.nav__link {
+  display: block;
+  padding: 8px 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  border-radius: 6px;
+  transition: color var(--transition), background var(--transition);
+}
+.nav__link:hover { color: var(--navy); background: var(--bg-secondary); }
+
+/* Actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav__phone {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+  transition: color var(--transition);
+}
+.nav__phone:hover { color: var(--orange); }
+.nav__cta { padding: 10px 22px; font-size: 0.9rem; }
+
+/* Hamburger */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .nav__links, .nav__phone { display: none; }
+  .nav__hamburger { display: flex; }
+  .nav__cta { padding: 8px 16px; font-size: 0.85rem; }
+  .top-bar__tagline { display: none; }
+}
+@media (max-width: 640px) {
+  .nav__cta { display: none; }
+}
+</style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger?.addEventListener('click', () => {
+    const isOpen = navLinks?.classList.toggle('nav__links--open');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Shrink header on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 60);
+  });
+</script>

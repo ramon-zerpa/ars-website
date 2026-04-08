@@ -1,0 +1,132 @@
+---
+const faqs = [
+  {
+    q: 'What are the most common roofing materials used in Florida?',
+    a: 'Asphalt shingles are most popular for affordability and versatility. Metal roofing is highly durable and handles high winds and rain. Tile roofing offers a classic Mediterranean look and can last 50+ years in Florida\'s climate.'
+  },
+  {
+    q: 'How often should I have my roof inspected in Florida?',
+    a: 'We recommend scheduling inspections at least twice a year — before and after hurricane season (June–November). Regular inspections catch problems early and prevent costly damage to your home\'s interior.'
+  },
+  {
+    q: 'Do I need a permit to replace my roof in Florida?',
+    a: 'Yes. Florida law requires a building permit for any roofing installation or replacement. Working without one can invalidate your insurance claims and create legal issues when selling your home. We handle all permitting for you.'
+  },
+  {
+    q: 'What is the Florida 25% Rule?',
+    a: 'Per the 2014 Florida Existing Building Code, if more than 25% of a roof is repaired, replaced, or recovered in a 12-month period, the entire roof system must be upgraded to current code — usually meaning full replacement. Our team measures this precisely during your free inspection.'
+  },
+  {
+    q: 'How much does it cost to replace a roof in Florida?',
+    a: 'Costs vary based on roof size, material type, and complexity. We offer completely free, no-obligation estimates with full line-item breakdowns. Contact us today and we\'ll give you an accurate quote for your specific property.'
+  },
+  {
+    q: 'Can I install a metal roof on my Florida home?',
+    a: 'Absolutely. Metal roofing is an excellent choice for Florida — it\'s engineered to withstand Category 5 winds, is fire-resistant, and qualifies for insurance discounts. We\'ll ensure proper installation per Florida Building Code.'
+  },
+];
+---
+
+<section class="faq-section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="faq-header">
+      <div>
+        <p class="section-tag reveal">GOT QUESTIONS?</p>
+        <h2 class="section-title reveal delay-100" id="faq-heading">Frequently Asked Questions</h2>
+      </div>
+      <a href="#contact" class="btn btn-primary reveal delay-200">Ask Us Anything</a>
+    </div>
+
+    <div class="faq-list" id="faq-list">
+      {faqs.map((faq, i) => (
+        <details class={`faq-item reveal delay-${((i % 3) + 1) * 100}`}>
+          <summary class="faq-item__q">
+            <span>{faq.q}</span>
+            <div class="faq-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </summary>
+          <p class="faq-item__a">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section {
+  background: var(--bg-primary);
+  padding: 100px 0;
+}
+
+.faq-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.faq-header .section-title { margin-bottom: 0; }
+
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--bg-secondary);
+  border: 1px solid #e4e8ef;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+.faq-item[open] {
+  border-color: var(--navy);
+}
+.faq-item[open] .faq-item__icon {
+  transform: rotate(45deg);
+  color: var(--orange);
+}
+
+.faq-item__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  user-select: none;
+}
+.faq-item__q::-webkit-details-marker { display: none; }
+.faq-item__q:hover { background: #eef0f5; }
+
+.faq-item__icon {
+  flex-shrink: 0;
+  transition: transform var(--transition), color var(--transition);
+  color: var(--navy);
+}
+
+.faq-item__a {
+  padding: 0 28px 24px;
+  color: var(--text-secondary);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  border-top: 1px solid #dde2eb;
+  padding-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .faq-header { flex-direction: column; align-items: flex-start; }
+}
+</style>

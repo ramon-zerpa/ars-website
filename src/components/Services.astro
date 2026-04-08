@@ -1,0 +1,193 @@
+---
+const services = [
+  {
+    title: 'Shingle Roofing',
+    sub: 'Residential',
+    desc: 'Premium GAF Timberline HDZ, Owens Corning, and CertainTeed Landmark shingles — ultra-dimensional, wind-resistant, and beautiful.',
+    features: ['GAF Timberline HDZ Series', 'Owens Corning Duration', 'CertainTeed Landmark', 'Lifetime Warranty'],
+    img: '/images/service-shingle.jpg',
+    color: '#1a3d6e',
+  },
+  {
+    title: 'Metal Roofing',
+    sub: 'Residential & Commercial',
+    desc: 'Drexel Metals standing seam and stone-coated steel roofing that withstands hurricanes, lasts 50+ years, and requires virtually no maintenance.',
+    features: ['Standing Seam Metal', 'Stone-Coated Steel', '50-Year Warranty', '120 MPH Wind Rated'],
+    img: '/images/service-metal.jpg',
+    color: '#2a5499',
+  },
+  {
+    title: 'Tile Roofing',
+    sub: 'Residential',
+    desc: 'Classic Eagle and Newpoint concrete tiles in Mediterranean, Spanish, and contemporary styles — durable, energy-efficient, and timeless.',
+    features: ['Eagle Concrete Tile', 'Newpoint Concrete', 'Mediterranean Styles', '50+ Year Lifespan'],
+    img: '/images/service-tile.jpg',
+    color: '#e8600e',
+  },
+  {
+    title: 'Commercial Roofing',
+    sub: 'TPO & Metal',
+    desc: 'TPO membrane and standing seam metal solutions for warehouses, offices, and commercial properties across Tampa Bay.',
+    features: ['TPO Membrane', 'EPDM Systems', 'Property Management', 'Energy-Efficient'],
+    img: '/images/service-commercial.jpg',
+    color: '#122c52',
+  },
+];
+---
+
+<section class="services-section" id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <p class="section-tag reveal">WHAT WE DO</p>
+    <h2 class="section-title reveal delay-100" id="services-heading">
+      Our Premium Roofing Solutions
+    </h2>
+    <p class="section-subtitle reveal delay-200">
+      Whether you need a simple repair, complete replacement, or routine maintenance,
+      our Master Elite team has you covered across Hillsborough, Pinellas, Pasco, and Hernando counties.
+    </p>
+
+    <div class="services-grid">
+      {services.map((svc, i) => (
+        <article class={`service-card reveal delay-${(i % 2 === 0 ? 100 : 200)}`}>
+          <div class="service-card__img-wrap">
+            <img
+              src={svc.img}
+              alt={`${svc.title} - Affordable Roofing Systems Tampa`}
+              loading="lazy"
+              width="600"
+              height="380"
+            />
+            <div class="service-card__sub-badge">{svc.sub}</div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">{svc.title}</h3>
+            <p class="service-card__desc">{svc.desc}</p>
+            <ul class="service-card__features">
+              {svc.features.map(f => (
+                <li>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a href="#contact" class="service-card__cta">
+              Get a Free Estimate
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.services-section {
+  background: var(--bg-primary);
+  padding: 100px 0;
+}
+.section-subtitle {
+  max-width: 680px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 64px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.service-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid #e8eaed;
+  background: white;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.service-card__img-wrap {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+.service-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.service-card:hover .service-card__img-wrap img { transform: scale(1.06); }
+
+.service-card__sub-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--navy);
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.service-card__body {
+  padding: 32px;
+}
+.service-card__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.service-card__desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.service-card__features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.service-card__features li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.service-card__features li svg { color: var(--orange); flex-shrink: 0; }
+
+.service-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--orange);
+  transition: gap var(--transition), color var(--transition);
+}
+.service-card__cta:hover { gap: 12px; color: var(--orange-h); }
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card__img-wrap { height: 220px; }
+}
+</style>

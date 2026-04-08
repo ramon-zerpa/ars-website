@@ -1,0 +1,195 @@
+---
+const testimonials = [
+  {
+    quote: "Not only were they the most thorough with the initial inspection, but workers also had the best price offer I searched for. Highly recommend!",
+    name: "Michael Doe",
+    location: "Tampa, FL",
+    rating: 5,
+  },
+  {
+    quote: "They performed the most comprehensive roof inspection and the roofer was the most knowledgeable person I've ever met in this industry.",
+    name: "Catherine Jane",
+    location: "Brandon, FL",
+    rating: 5,
+  },
+  {
+    quote: "The workers were great — knowledgeable, courteous and very efficient. They finished on time and I am very satisfied with the result.",
+    name: "Sue Jones",
+    location: "Clearwater, FL",
+    rating: 5,
+  },
+  {
+    quote: "I was impressed by their professionalism from start to finish. The crew left my yard cleaner than they found it. Absolutely five stars.",
+    name: "Robert Smith",
+    location: "Westchase, FL",
+    rating: 5,
+  },
+];
+---
+
+<section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <p class="section-tag reveal">WHAT OUR CLIENTS SAY</p>
+    <h2 class="section-title reveal delay-100" id="testimonials-heading">
+      Save Time &amp; Money With a<br/>Top-Rated Roofing Service
+    </h2>
+
+    <div class="testimonials-grid">
+      {testimonials.map((t, i) => (
+        <blockquote class={`testi-card reveal delay-${(i + 1) * 100}`}>
+          <div class="testi-card__stars" aria-label={`${t.rating} out of 5 stars`}>
+            {'★'.repeat(t.rating)}
+          </div>
+          <p class="testi-card__quote">"{t.quote}"</p>
+          <footer class="testi-card__footer">
+            <div class="testi-card__avatar" aria-hidden="true">
+              {t.name.charAt(0)}
+            </div>
+            <div>
+              <cite class="testi-card__name">{t.name}</cite>
+              <span class="testi-card__location">{t.location}</span>
+            </div>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+
+    <!-- Google rating strip -->
+    <div class="rating-strip reveal">
+      <div class="rating-strip__logo">
+        <span class="goog-g">G</span><span class="goog-o">o</span><span class="goog-o2">o</span><span class="goog-g2">g</span><span class="goog-l">l</span><span class="goog-e">e</span>
+      </div>
+      <div class="rating-strip__stars">★★★★★</div>
+      <div class="rating-strip__text">
+        <strong>4.9/5</strong> — Based on 200+ Google Reviews
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonials-section {
+  background: var(--navy);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232,96,14,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.testimonials-section .section-tag { color: var(--orange); }
+.testimonials-section .section-title { color: white; }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.testi-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background var(--transition), transform var(--transition);
+  margin: 0;
+}
+.testi-card:hover {
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-6px);
+}
+
+.testi-card__stars {
+  font-size: 1.2rem;
+  color: #fbbf24;
+  letter-spacing: 2px;
+}
+.testi-card__quote {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+.testi-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testi-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.testi-card__name {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: white;
+  font-style: normal;
+}
+.testi-card__location {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Google rating strip */
+.rating-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+.rating-strip__logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+.goog-g  { color: #4285F4; }
+.goog-o  { color: #EA4335; }
+.goog-o2 { color: #FBBC05; }
+.goog-g2 { color: #4285F4; }
+.goog-l  { color: #34A853; }
+.goog-e  { color: #EA4335; }
+
+.rating-strip__stars {
+  font-size: 1.4rem;
+  color: #fbbf24;
+  letter-spacing: 2px;
+}
+.rating-strip__text {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+}
+.rating-strip__text strong { color: white; }
+
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+</style>

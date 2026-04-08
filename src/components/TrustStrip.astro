@@ -1,0 +1,73 @@
+---
+const badges = [
+  { icon: '🏅', label: 'GAF Master Elite', sub: 'Top 3% Nationwide' },
+  { icon: '⭐', label: 'A+ BBB Rated', sub: 'Since 1999' },
+  { icon: '🛡️', label: 'FL Licensed & Insured', sub: 'CCC1326722 | CGC1509172' },
+  { icon: '📅', label: '30+ Years Exp.', sub: 'Tampa Bay Since 1999' },
+  { icon: '🏆', label: "GAF President's Club", sub: 'Highest Honor' },
+  { icon: '💳', label: 'Financing Available', sub: 'Wells Fargo & Hearth' },
+];
+---
+
+<section class="trust-strip" aria-label="Trust indicators">
+  <div class="container trust-strip__inner">
+    {badges.map((b, i) => (
+      <div class={`trust-badge reveal delay-${(i + 1) * 100}`}>
+        <span class="trust-badge__icon" aria-hidden="true">{b.icon}</span>
+        <div class="trust-badge__text">
+          <span class="trust-badge__label">{b.label}</span>
+          <span class="trust-badge__sub">{b.sub}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+.trust-strip {
+  background: var(--bg-secondary);
+  border-top: 3px solid var(--orange);
+  border-bottom: 1px solid #e8eaed;
+  padding: 28px 0;
+}
+.trust-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.trust-badge__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.trust-badge__text {
+  display: flex;
+  flex-direction: column;
+}
+.trust-badge__label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.trust-badge__sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .trust-strip__inner { justify-content: center; gap: 32px; }
+}
+@media (max-width: 480px) {
+  .trust-badge:nth-child(n+5) { display: none; }
+}
+</style>
